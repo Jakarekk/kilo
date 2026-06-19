@@ -1,0 +1,21 @@
+name: Build (ino_dev)
+
+on:
+  push:
+    branches: [ "ino_dev" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout kodu
+        uses: actions/checkout@v4
+
+      - name: Build (make)
+        run: make
+
+      - name: Upload zbudowanego artefaktu
+        uses: actions/upload-artifact@v4
+        with:
+          name: kilo-binary
+          path: kilo
