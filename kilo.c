@@ -1307,3 +1307,4 @@ int main(int argc, char **argv) {
     return 0;
 }
 // test
+int test(void) { int x; return x + 1; }
